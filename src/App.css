@@ -1,38 +1,59 @@
-.App {
+body{
+
+  /* background-color: #33006F; */
+}
+.navbar{
+  /* background-color: #FFF4B7!important; */
+}
+.imgLogo {
+  width: 100px;
+}
+#navbarNav ul li a {
+  position: relative;
+  margin-right: 10px;
+}
+#navbarNav ul li a::before{
+  content: '';
+  width: 0;
+  height: 5px;
+  background-color: rgb(163, 163, 163);
+  position: absolute;
+  bottom: 0;
+  transition: 1s;
+}
+#navbarNav ul li a:hover::before{
+  width: 80%;
+}
+.shoping_car {
+  position: relative;
+}
+.car i {
+  color:rgb(163, 163, 163);
+}
+.number_items{
+  position: absolute;
+  top: -25px;
+  right: 0px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: rgb(163, 163, 163);
   text-align: center;
+  color: #fff;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.sliderImage{
+  width: 100%!important;
+  height: 85vh!important;
+  background-position: center;
+  background-size: cover;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.car{
+  max-height: 500px!important;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+ul li{
+  list-style: none;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+ul li a {
+  text-decoration: none;
+  color: black;
 }
