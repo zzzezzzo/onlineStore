@@ -1,18 +1,20 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import Navbar from './component/Navbar';
-import ProductsList from './component/ProductsList';
-import Slider from './component/Slider';
-import AboutProducts from './component/AboutProducts';
-import ProductDetails from './component/ProductDetails';
-import GetCategories from './component/GetCategories';
-import ItemsCategory from './component/ItemsCategory';
-import Footer from './component/Footer';
+import Navbar from './components/Navbar';
+import ProductsList from './components/ProductsList';
+import Slider from './components/Slider';
+import AboutProducts from './components/AboutProducts';
+import ProductDetails from './components/ProductDetails';
+import GetCategories from './components/GetCategories';
+import ItemsCategory from './components/ItemsCategory';
+import Footer from './components/Footer';
+import AddNewCar from './components/AddNewCar';
 
 function App(){
   return(
     <>
       <Navbar/>
+      <AddNewCar/>
       <Routes>
         <Route path='/' 
           element={

@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Image1 from '../image/slider4.jpg'
 function AboutProducts() {
     return (

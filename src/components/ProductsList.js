@@ -2,13 +2,21 @@ import { useEffect } from "react";
 import Product from "./Product";
 import { useState } from "react";
 import GetCategories from "./GetCategories";
+import { data } from "react-router";
+import axios from "axios";
 
 function ProductsList(){
     const [products ,setProducts] = useState([])
-    const api_url = 'https://fakestoreapi.com/products'
+    const api_url = 'http://127.0.0.1:8000/api/products'
     useEffect(()=>{
-        fetch(api_url).then(res=>res.json()).then(data=>setProducts(data))
-    },[])
+        const fetchData = async ()=>{
+            const res = await axios.get(api_url);
+            const products = res.data
+            setProducts(products)
+        }
+        fetchData();
+        
+    },[api_url])
     return(
         <>
             <div className="ourProducts" id="products"> 

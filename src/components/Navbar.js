@@ -1,7 +1,20 @@
+import { useEffect, useState } from 'react';
 import Logo from '../image/logo.jpg'
 import { Link } from 'react-router';
+import axios from 'axios';
 
 function Navbar (){
+    const [items, setItems] = useState([])
+    useEffect(()=>{
+        const fetchData = async ()=> {
+            const res = await axios.get("http://127.0.0.1:8000/api/carItems")            
+            setItems(res.data[1])
+        }
+        const interval = setInterval(()=>{
+            fetchData()
+        },1000)
+        return ()=>clearInterval(interval)
+    },[])
     return(
         <>
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -13,7 +26,7 @@ function Navbar (){
             <div className="collapse navbar-collapse d-flex justify-content-center" id="navbarNav">
                 <ul className="navbar-nav">
                     <li className="nav-item">
-                    <a className="nav-link active" aria-current="page" href="/">Home</a>
+                    <Link className="nav-link active" aria-current="page" to="/">Home</Link>
                     </li>
                     <li className="nav-item">
                     <Link className="nav-link" to="/AboutProducts">about</Link>
@@ -26,11 +39,11 @@ function Navbar (){
             <div className='shoping_car'>
                 <div>
                     <a>
-                        <span className='number_items'>0</span>
+                        <span className='number_items'>{items}</span>
                     </a>
                 </div>
                 <div className='car'>
-                    <i className="fa-solid fa-cart-shopping fa-xl"></i>
+                    <i  data-bs-toggle="modal" data-bs-target="#staticBackdrop" className="fa-solid fa-cart-shopping fa-xl"></i>
                 </div>
             </div>
 
